@@ -1,0 +1,33 @@
+{% extends "layouts/base-presentation.html" %}
+
+{% block content %}
+  <div class="container mt-8">
+    <h1>Author List<a class="btn btn-primary" style="float: right" href="{% url 'catalog:author-create' %}">+</a></h1>
+    {% if author_list %}
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Username</th>
+          <th>Pseudonym</th>
+        </tr>
+        {% for author in author_list %}
+          <tr>
+            <td>
+              <a href="{{ author.get_absolute_url }}">{{ author.id }}</a>
+            </td>
+            <td>
+              {{ author.first_name }} {{ author.last_name }}
+            </td>
+            <td>
+              {{ author.username }}
+            </td>
+            <td>
+              {{ author.pseudonym|default_if_none:"" }}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+  </div>
+{% endblock %}

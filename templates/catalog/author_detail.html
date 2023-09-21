@@ -1,0 +1,22 @@
+{% extends "layouts/base-presentation.html" %}
+
+
+{% block content %}
+  <div class="container mt-8">
+    <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+    <p><strong>username: </strong>{{ author.username }}</p>
+    <p><strong>Pseudonym: </strong>{{ author.pseudonym }}</p>
+    <p><strong>Is staff: </strong>{{ author.is_staff }}</p>
+    <div class="ml-3">
+      <h3>Books:</h3>
+      {% for book in author.books.all %}
+        <hr>
+        <p class="text-muted">id: {{ book.id }}</p>
+        <p><strong>Title: {{ book.title }} </strong></p>
+        <p><strong>Format: {{ book.format }} </strong></p>
+      {% empty %}
+        <p>No books!</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

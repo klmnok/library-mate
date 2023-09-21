@@ -1,0 +1,14 @@
+{% extends "layouts/base-presentation.html" %}
+{% block content %}
+  <div class="container mt-8">
+
+    <h1>Delete Literary Format</h1>
+
+    <p>Are you sure you want to delete the literary format: {{ literaryformat }}?</p>
+    <p><i>All Books with this literary format will be also deleted!</i></p>
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Yes, delete" class="btn btn-danger" />
+    </form>
+  </div>
+{% endblock %}
