@@ -4,7 +4,7 @@ Django project for managing books and authors in Library
 
 ## Check it out!
 
-[Library project deployed to Render](https://library-mate.render.com/)
+[Library project deployed to Render](https://library-mate-g7ad.onrender.com/)
 
 ## Installation
 
